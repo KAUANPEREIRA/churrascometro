@@ -7,6 +7,9 @@ let adultos= document.querySelector('#adultos')
 let criancas=document.querySelector('#criancas')
 let duracao=document.querySelector('#horarios')
 let res=document.querySelector('.res')
+let carne ;
+let fcarne;
+
 
 function calcular(){
     let a = adultos.value
@@ -14,7 +17,9 @@ function calcular(){
     let quantidadeCarne= carnePP(duracao)* a + (carnePP(duracao) / c)
     let quantidadeCerveja= cervejaPP(duracao)* a 
     let quantidadeBebidas= bebidas(duracao)* a + (bebidas(duracao) / c)
-    res.innerHTML=`<p>${quantidadeCarne/1000} Kg de carne</p>`
+    
+    carne=res.innerHTML=`<p>${(quantidadeCarne/1000).toFixed(2)} Kg de carne</p>`
+    
     res.innerHTML+=`<p>${Math.ceil(quantidadeCerveja/355)} latas de cerveja</p>`
     res.innerHTML+=`<p>${Math.ceil(quantidadeBebidas/2000)} garrafas de refri e suco</p>`
 }
